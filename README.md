@@ -1,6 +1,9 @@
 <body>
-  <h1>gnight ~ simplest google sheet wrapper</h1>
-  
+  <div align="center">
+    <img src="https://github.com/yuki-shi/gnight/blob/main/assets/picmix.com_2400899.gif">
+    <h1>gnight ~ simplest google sheets wrapper</h1>
+    <p>read and write google sheets files from and with dataframes</p>
+  </div>
   <h2>:robot: use cases</h2>
 
   <h2>:steam_locomotive: usage</h2>
