@@ -38,10 +38,28 @@
   ```
   
   <h3>run</h3>
+  <p>export the path to the service account file as an environmental variable:</p>
   
   ```bash
-  
+  $ export SERVICE_ACCOUNT_PATH={path_to_service_account_file}
   ```
+  
+  <p>create a python file and import the desired functions</p>
+  
+  ```python
+  from gnight import read_from_sheets
+  ```
+  
+  <p>following the documentation, declare each variable and make a function call</p>
+  
+  ```python
+  sheet_name = 'Página1'
+  sheet_range = 'A1:E10'
+  spreadsheet_url = EXAMPLE URL HERE
+
+  df = read_from_sheets(spreadsheet_url, sheet_name, sheet_range)
+  print(df.head())
+   ```
   
   <h2>:jack_o_lantern: technology</h2>
   python.
