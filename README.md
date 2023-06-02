@@ -5,6 +5,11 @@
     <p>read and write google sheets files from and with dataframes</p>
   </div>
   <h2>:robot: use cases</h2>
+  <p>the two main uses of this library are for ETL processes where google sheets files are used, mainly:
+    <ol>
+      <li>export data from a google sheets file to a python dict or pandas dataframe;</li>
+      <li>import and update data to google sheets from a pandas dataframe.</li>
+    </ol>
   <h2>:steam_locomotive: usage</h2>
   <h3>activate sheets API</h3>
     <p>activate google sheet's API on a google cloud plataform project by <a href="https://developers.google.com/sheets/api/quickstart/python">clicking here</a>.</p>
