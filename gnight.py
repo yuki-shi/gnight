@@ -74,7 +74,7 @@ def read_from_sheets(sheet,
                      sheet_range: str,
                      to_dataframe=True) -> pd.DataFrame:
     """
-    Read worksheet data into a Pandas' DataFrame
+    Read worksheet data into a Pandas DataFrame.
 
     Args:
         spreadsheet_url (str): Spreadsheet's URL
@@ -105,3 +105,47 @@ def read_from_sheets(sheet,
         return pd.DataFrame(values[1:], columns=values[0])
 
     return values
+
+@validate_connection
+def update_sheets(sheet,
+                  df: pd.DataFrame,
+                  speadsheet_url: str,
+                  sheet_name: str,
+                  sheet_range: str,) -> Dict:
+    """
+    Update a Google Sheets file based on a Pandas DataFrame.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing the data to be inserted on the Google Sheets file.
+        spreadsheet_url (str): Spreadsheet's URL
+        sheet_name (str): Worksheet name. It can also be its index in int format
+        sheet_range (str): Desired extraction range in A1 syntax
+
+    Returns:
+        dict: Dictionary containing metadata of the updated Google Sheet File. Not rendered or used on other functions.  
+    """
+ 
+    spreadsheet_id = get_id_from_url(speadsheet_url)
+   
+    # Format dataframe into a list of lists
+    values = df.values.tolist()
+    # Add column headers as first element of the list
+    values.insert(0, df.columns.tolist())
+
+    data = [
+            {
+                'range': sheet_range,
+                'values': values
+                }
+            ]
+    body = {
+            'valueInputOption': 'USER_ENTERED',
+            #https://developers.google.com/sheets/api/reference/rest/v4/ValueInputOption
+            'data': data
+            }
+
+    result = sheet.values().batchUpdate(spreadsheetId=spreadsheet_id,
+                                        body=body).execute()
+    print('Sheet updated!')
+    return result
+
