@@ -61,14 +61,14 @@
   print(df.head())
    ```
   <h3>run - Google Colab</h3>
-  <p>on Google Colab, mount your Google Drive files.
-  <img src="">
+  <p>on Google Colab, mount your Google Drive files.</p>
+  <img src="https://github.com/yuki-shi/gnight/blob/main/assets/colab_usage1.png">
   <p>change directory to your desired repository folder, here called <i>Repos</i>, then clone this repository. you'll only need to run this step the 1st time you set up this repository.</p>
-  <img src="">
+  <img src="https://github.com/yuki-shi/gnight/blob/main/assets/colab_usage2.png">
   <p>once again, change directory to the cloned repository, then copy <i>gnight.py</i> to the current Colab session.</p>
-  <img src="">
+  <img src="https://github.com/yuki-shi/gnight/blob/main/assets/colab_usage3.png">
   <p>upload the service account JSON file to the session, then set its path as an environmental variable by using the <i>%env</i> magic.</p>
-  <img src="">
+  <img src="https://github.com/yuki-shi/gnight/blob/main/assets/colab_usage4.png">
   <p>it may also be useful to store it on Google Drive, so you may not need copy it manually everytime you create a new session!</p>
   <h2>:jack_o_lantern: technology</h2>
   python.
